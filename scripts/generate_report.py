@@ -216,11 +216,33 @@ def main():
     # 加载条目
     print(f"加载条目: {json_path}")
     entries = load_entries(str(json_path))
-    print(f"共 {len(entries)} 条条目")
-    
-    if not entries:
-        print("警告: 没有条目可生成报告", file=sys.stderr)
+    print(f"数据库中共 {len(entries)} 条条目")
+
+    # 按发布日期过滤，只取今天的条目
+    today = datetime.now().strftime("%Y-%m-%d")
+    today_entries = []
+    for entry in entries:
+        pub_date = entry.get('published_at', '')
+        if pub_date:
+            # 处理 Unix 时间戳或 ISO 字符串
+            try:
+                if isinstance(pub_date, (int, float)):
+                    entry_date = datetime.fromtimestamp(pub_date).strftime("%Y-%m-%d")
+                else:
+                    # ISO 8601: "2026-04-13T00:53:00Z"
+                    entry_date = str(pub_date)[:10]
+                if entry_date == today:
+                    today_entries.append(entry)
+            except (ValueError, OSError):
+                pass
+
+    print(f"今天 ({today}) 新增 {len(today_entries)} 条条目")
+
+    if not today_entries:
+        print("警告: 今天没有新条目，跳过报告生成", file=sys.stderr)
         sys.exit(0)
+
+    entries = today_entries
     
     # AI 摘要（如果配置了 API Key）
     api_key = os.environ.get("GOOGLE_API_KEY", "")
