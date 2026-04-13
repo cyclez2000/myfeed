@@ -5,6 +5,17 @@
     <dateGenerated>Mon, 13 Apr 2026 09:00:00 +0800</dateGenerated>
   </head>
   <body>
-    <outline type="rss" xmlUrl="https://imjuya.github.io/juya-ai-daily/rss.xml" text="Juya AI Daily" title="Juya AI Daily"/>
+    <!-- AI 日报 -->
+    <outline type="rss" xmlUrl="https://imjuya.github.io/juya-ai-daily/rss.xml" text="橘鸦AI早报" title="橘鸦AI早报"/>
+
+    <!-- 科技资讯 -->
+    <outline type="rss" xmlUrl="https://hnrss.org/frontpage?points=100" text="Hacker News (高分)" title="Hacker News (高分精选)"/>
+
+    <!-- AI 领域博客 -->
+    <outline type="rss" xmlUrl="https://simonwillison.net/atom/everything" text="Simon Willison" title="Simon Willison"/>
+    <outline type="rss" xmlUrl="https://openai.com/blog/rss.xml" text="OpenAI Blog" title="OpenAI 官方博客"/>
+    <outline type="rss" xmlUrl="https://blog.google/technology/ai/rss/" text="Google AI" title="Google AI 博客"/>
+    <outline type="rss" xmlUrl="https://a16z.com/feed/" text="a16z" title="a16z 投资动态"/>
+    <outline type="rss" xmlUrl="https://techcrunch.com/category/artificial-intelligence/feed/" text="TechCrunch AI" title="TechCrunch AI 频道"/>
   </body>
 </opml>
