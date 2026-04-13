@@ -64,7 +64,7 @@ def generate_ai_summary(entries: list, api_key: str) -> str:
 3. 输出格式：先一句话总结，再分点列出关键内容"""
             
             response = client.models.generate_content(
-                model='gemma-4-31b-it',
+                model='gemma-4-26b-a4b-it',
                 contents=prompt
             )
             return response.text
