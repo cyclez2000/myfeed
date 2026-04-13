@@ -33,7 +33,7 @@ jobs:
 
       - name: Install Python dependencies
         run: |
-          pip install -q google-generativeai
+          pip install -q google-genai
           echo "Dependencies installed"
 
       - name: Import feeds
@@ -45,6 +45,16 @@ jobs:
 
       - name: Export entries to JSON
         run: feed get entries -o json --limit 100 > data/entries.json
+
+      - name: Check secrets
+        run: |
+          if [ -z "$GOOGLE_API_KEY" ]; then
+            echo "::warning::GOOGLE_API_KEY is empty. AI summary will be skipped."
+          else
+            echo "GOOGLE_API_KEY is set (length: ${#GOOGLE_API_KEY})"
+          fi
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: Generate daily report
         env:

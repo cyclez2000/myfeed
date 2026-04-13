@@ -12,10 +12,15 @@ from datetime import datetime
 from pathlib import Path
 
 try:
-    import google.generativeai as genai
+    from google import genai
+    from google.genai import types
     HAS_GEMINI = True
 except ImportError:
-    HAS_GEMINI = False
+    try:
+        import google.generativeai as genai
+        HAS_GEMINI = True
+    except ImportError:
+        HAS_GEMINI = False
 
 
 def load_entries(json_path: str) -> list:
@@ -39,17 +44,17 @@ def generate_ai_summary(entries: list, api_key: str) -> str:
         return ""
     
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-2.0-flash')
-        
-        # 构建提示词
-        titles = []
-        for entry in entries[:20]:  # 最多取 20 条
-            title = entry.get('title', '无标题')
-            summary = entry.get('summary', '')[:100]
-            titles.append(f"- {title}: {summary}")
-        
-        prompt = f"""请为以下 RSS 资讯生成简洁的中文日报摘要（200字以内）：
+        # 使用新 API
+        try:
+            client = genai.Client(api_key=api_key)
+            
+            titles = []
+            for entry in entries[:20]:
+                title = entry.get('title', '无标题')
+                summary = entry.get('summary', '')[:100]
+                titles.append(f"- {title}: {summary}")
+            
+            prompt = f"""请为以下 RSS 资讯生成简洁的中文日报摘要（200字以内）：
 
 {chr(10).join(titles)}
 
@@ -57,9 +62,35 @@ def generate_ai_summary(entries: list, api_key: str) -> str:
 1. 提炼今天的核心主题和趋势
 2. 用简洁的中文总结
 3. 输出格式：先一句话总结，再分点列出关键内容"""
-        
-        response = model.generate_content(prompt)
-        return response.text
+            
+            response = client.models.generate_content(
+                model='gemini-2.0-flash',
+                contents=prompt
+            )
+            return response.text
+        except Exception as e:
+            # 回退到旧 API
+            print(f"新 API 调用失败，尝试旧 API: {e}", file=sys.stderr)
+            genai.configure(api_key=api_key)
+            model = genai.GenerativeModel('gemini-2.0-flash')
+            
+            titles = []
+            for entry in entries[:20]:
+                title = entry.get('title', '无标题')
+                summary = entry.get('summary', '')[:100]
+                titles.append(f"- {title}: {summary}")
+            
+            prompt = f"""请为以下 RSS 资讯生成简洁的中文日报摘要（200字以内）：
+
+{chr(10).join(titles)}
+
+要求：
+1. 提炼今天的核心主题和趋势
+2. 用简洁的中文总结
+3. 输出格式：先一句话总结，再分点列出关键内容"""
+            
+            response = model.generate_content(prompt)
+            return response.text
     except Exception as e:
         print(f"AI 摘要生成失败: {e}", file=sys.stderr)
         return ""
@@ -192,10 +223,14 @@ def main():
     api_key = os.environ.get("GOOGLE_API_KEY", "")
     ai_summary = ""
     if api_key and HAS_GEMINI:
-        print("正在生成 AI 摘要...")
+        print("正在生成 AI 摘要...", file=sys.stderr)
         ai_summary = generate_ai_summary(entries, api_key)
         if ai_summary:
-            print("AI 摘要生成成功")
+            print("AI 摘要生成成功", file=sys.stderr)
+        else:
+            print("AI 摘要为空", file=sys.stderr)
+    elif not api_key:
+        print("警告: GOOGLE_API_KEY 未设置，跳过 AI 摘要", file=sys.stderr)
     
     # 生成 Markdown
     print("生成 Markdown 报告...")
