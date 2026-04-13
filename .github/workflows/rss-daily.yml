@@ -2,10 +2,10 @@ name: RSS Daily Digest
 
 on:
   schedule:
-    # 每天 UTC 01:00 = 北京时间 09:00
+    # 姣忓ぉ UTC 01:00 = 鍖椾含鏃堕棿 09:00
     - cron: '0 1 * * *'
   workflow_dispatch:
-    # 支持手动触发
+    # 鏀寔鎵嬪姩瑙﹀彂
 
 jobs:
   digest:
@@ -43,6 +43,9 @@ jobs:
         run: feed fetch
         continue-on-error: true
 
+      - name: Ensure data directory exists
+        run: mkdir -p data
+
       - name: Export entries to JSON
         run: feed get entries -o json --limit 100 > data/entries.json
 
@@ -66,5 +69,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add output/daily/ data/entries.json
-          git diff --staged --quiet || git commit -m "📰 Daily digest $(date +%Y-%m-%d)"
+          git diff --staged --quiet || git commit -m "馃摪 Daily digest $(date +%Y-%m-%d)"
           git push
