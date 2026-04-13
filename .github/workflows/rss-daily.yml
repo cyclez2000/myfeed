@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install feed CLI
         run: |
@@ -31,7 +32,9 @@ jobs:
           python-version: '3.12'
 
       - name: Install Python dependencies
-        run: pip install google-generativeai feedparser
+        run: |
+          pip install -q google-generativeai
+          echo "Dependencies installed"
 
       - name: Import feeds
         run: feed import feeds.opml

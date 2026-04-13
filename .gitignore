@@ -12,7 +12,3 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
-
-# Local test files
-data/entries.json
-output/daily/*.md
