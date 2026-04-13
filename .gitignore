@@ -1,14 +1,45 @@
-# Python
+```
+# Dependencies
 __pycache__/
 *.pyc
 *.pyo
-.venv/
-venv/
+*.pyd
+*.py.class
+*.py.o
+*.py.obj
+*.py.out
 
-# OS
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log
+
+# Coverage reports
+.coverage
+coverage/
+htmlcov/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
 .DS_Store
 Thumbs.db
 
-# IDE
-.vscode/
-.idea/
+# Testing
+.pytest_cache/
+.mypy_cache/
+*.pytest*
+```

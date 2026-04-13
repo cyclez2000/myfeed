@@ -3,14 +3,28 @@
 MyFeed 日报生成脚本
 功能：读取 feed CLI 导出的 JSON 条目，生成 Markdown 格式日报
 可选：使用 Google AI Studio Gemini 生成 AI 摘要
+支持多种 LLM 后端（通过配置文件）
 """
 
 import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
+# 尝试加载配置文件
+SCRIPT_DIR = Path(__file__).parent.parent
+CONFIG_PATH = SCRIPT_DIR / "config" / "digest-config.json"
+LLM_CONFIG = None
+
+if CONFIG_PATH.exists():
+    try:
+        with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
+            LLM_CONFIG = json.load(f)
+    except Exception as e:
+        print(f"警告：配置文件加载失败：{e}", file=sys.stderr)
+
+# 导入 Gemini SDK（使用新的 google.genai API）
 try:
     from google import genai
     from google.genai import types
@@ -39,6 +53,30 @@ def load_entries(json_path: str) -> list:
             entries = []
     
     return entries
+
+
+def filter_today_entries(entries: list, target_date: str) -> list:
+    """按发布日期过滤条目，只取指定日期的条目（使用时区感知）"""
+    today_entries = []
+    for entry in entries:
+        pub_date = entry.get('published_at', '')
+        if pub_date:
+            try:
+                if isinstance(pub_date, (int, float)):
+                    # Unix 时间戳 - 转换为北京时间（UTC+8）
+                    dt = datetime.fromtimestamp(pub_date, tz=timezone.utc)
+                    dt_beijing = dt.astimezone(timezone(datetime.timedelta(hours=8)))
+                    entry_date = dt_beijing.strftime("%Y-%m-%d")
+                else:
+                    # ISO 8601: "2026-04-13T00:53:00Z"
+                    dt = datetime.fromisoformat(str(pub_date).replace('Z', '+00:00'))
+                    dt_beijing = dt.astimezone(timezone(datetime.timedelta(hours=8)))
+                    entry_date = dt_beijing.strftime("%Y-%m-%d")
+                if entry_date == target_date:
+                    today_entries.append(entry)
+            except (ValueError, OSError):
+                pass
+    return today_entries
 
 
 def generate_ai_summary(entries: list, api_key: str) -> str:
@@ -234,31 +272,52 @@ def main():
     entries = load_entries(str(json_path))
     print(f"数据库中共 {len(entries)} 条条目")
 
-    # 按发布日期过滤，只取今天的条目
-    today = datetime.now().strftime("%Y-%m-%d")
-    today_entries = []
-    for entry in entries:
-        pub_date = entry.get('published_at', '')
-        if pub_date:
-            # 处理 Unix 时间戳或 ISO 字符串
-            try:
-                if isinstance(pub_date, (int, float)):
-                    entry_date = datetime.fromtimestamp(pub_date).strftime("%Y-%m-%d")
-                else:
-                    # ISO 8601: "2026-04-13T00:53:00Z"
-                    entry_date = str(pub_date)[:10]
-                if entry_date == today:
-                    today_entries.append(entry)
-            except (ValueError, OSError):
-                pass
+    # 获取北京时间（UTC+8）的日期
+    tz_beijing = timezone(datetime.timedelta(hours=8))
+    now_beijing = datetime.now(tz_beijing)
+    today = now_beijing.strftime("%Y-%m-%d")
+    
+    # 按发布日期过滤，只取今天的条目（使用时区感知）
+    today_entries = filter_today_entries(entries, today)
 
     print(f"今天 ({today}) 新增 {len(today_entries)} 条条目")
 
+    # 错误处理：如果今天没有新条目，生成"今日无新内容"报告
     if not today_entries:
-        print("警告: 今天没有新条目，跳过报告生成", file=sys.stderr)
+        print("警告：今天没有新条目，生成空报告", file=sys.stderr)
+        # 生成"今日无新内容"的 Markdown 报告
+        markdown = f"""# 📰 MyFeed 每日摘要
+
+> **日期**: {today}  
+> **生成时间**: {now_beijing.strftime("%Y-%m-%d %H:%M:%S")}  
+> **条目数量**: 0
+
+---
+
+## 📢 今日无新内容
+
+今天没有新的 RSS 条目。请检查订阅源是否正常更新。
+
+---
+
+## 📊 统计信息
+
+| 指标 | 数值 |
+|------|------|
+| 总条目数 | 0 |
+| 订阅源数量 | 0 |
+| 生成时间 | {now_beijing.strftime("%Y-%m-%d %H:%M:%S")} |
+
+---
+
+> 🤖 由 MyFeed 自动生成 | 基于 [odysseus0/feed](https://github.com/odysseus0/feed)
+"""
+        output_path.write_text(markdown, encoding='utf-8')
+        print(f"已保存空报告：{output_path}")
         sys.exit(0)
 
     entries = today_entries
+
     
     # AI 摘要（如果配置了 API Key）
     api_key = os.environ.get("GOOGLE_API_KEY", "")

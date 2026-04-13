@@ -40,6 +40,8 @@ myfeed/
 
 ### 2. 配置 AI 摘要（可选）
 
+> ⚠️ **重要提示**：AI 摘要功能需要配置 API Key 才能启用！
+
 在仓库 Settings → Secrets and variables → Actions 中添加：
 
 | Secret | 说明 |
@@ -47,6 +49,18 @@ myfeed/
 | `GOOGLE_API_KEY` | Google AI Studio API Key |
 
 获取 API Key: [aistudio.google.com](https://aistudio.google.com/)
+
+**配置步骤**：
+1. 访问 [Google AI Studio](https://aistudio.google.com/)
+2. 登录你的 Google 账号
+3. 点击 "Get API Key" 创建新的 API Key
+4. 复制 API Key
+5. 在你的 GitHub 仓库中，进入 Settings → Secrets and variables → Actions
+6. 点击 "New repository secret"
+7. Name 填写 `GOOGLE_API_KEY`，Value 粘贴你的 API Key
+8. 点击 "Add secret" 保存
+
+配置完成后，工作流将自动生成 AI 摘要。如果未配置，日报将不包含 AI 摘要部分。
 
 ### 3. 触发工作流
 
