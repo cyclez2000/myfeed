@@ -103,7 +103,7 @@ def format_entry(entry: dict) -> str:
     """格式化单个条目为 Markdown"""
     title = entry.get('title', '无标题')
     link = entry.get('url') or entry.get('link', '#')
-    
+
     # 处理发布时间
     published = "未知时间"
     published_at = entry.get('published_at')
@@ -119,15 +119,31 @@ def format_entry(entry: dict) -> str:
                 published = dt.strftime("%Y-%m-%d %H:%M")
         except (ValueError, OSError):
             published = str(published_at)
-    
-    # 摘要（截断到 300 字符）
-    summary = entry.get('summary') or entry.get('description', '暂无摘要')
-    if len(summary) > 300:
-        summary = summary[:300] + "..."
-    
-    feed_title = entry.get('feed_title', '未知来源')
-    
-    return f"""### [{title}]({link})
+
+    # 优先使用 content_md（完整 Markdown 内容），其次 content_html，最后 summary
+    full_content = entry.get('content_md') or entry.get('content_html')
+    if full_content:
+        # 有完整内容时，输出完整文章
+        feed_title = entry.get('feed_title', '未知来源')
+        return f"""### [{title}]({link})
+
+- **来源**: {feed_title}
+- **发布时间**: {published}
+
+---
+
+{full_content}
+
+---
+"""
+    else:
+        # 没有完整内容时，只显示摘要
+        summary = entry.get('summary') or entry.get('description', '暂无摘要')
+        if len(summary) > 500:
+            summary = summary[:500] + "..."
+
+        feed_title = entry.get('feed_title', '未知来源')
+        return f"""### [{title}]({link})
 
 - **来源**: {feed_title}
 - **发布时间**: {published}
