@@ -1,0 +1,57 @@
+name: RSS Daily Digest
+
+on:
+  schedule:
+    # 每天 UTC 01:00 = 北京时间 09:00
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+    # 支持手动触发
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install feed CLI
+        run: |
+          curl -sL https://github.com/odysseus0/feed/releases/download/v0.2.0/feed_0.2.0_linux_amd64.tar.gz | tar xz
+          sudo mv feed /usr/local/bin/
+          feed --version
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install google-generativeai feedparser
+
+      - name: Import feeds
+        run: feed import feeds.opml
+
+      - name: Fetch feeds
+        run: feed fetch
+        continue-on-error: true
+
+      - name: Export entries to JSON
+        run: feed get entries -o json --limit 100 > data/entries.json
+
+      - name: Generate daily report
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+        run: python scripts/generate_report.py
+
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output/daily/ data/entries.json
+          git diff --staged --quiet || git commit -m "📰 Daily digest $(date +%Y-%m-%d)"
+          git push

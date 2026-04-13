@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head>
+    <title>MyFeed Subscriptions</title>
+    <dateGenerated>Mon, 13 Apr 2026 09:00:00 +0800</dateGenerated>
+  </head>
+  <body>
+    <outline type="rss" xmlUrl="https://imjuya.github.io/juya-ai-daily/rss.xml" text="Juya AI Daily" title="Juya AI Daily"/>
+  </body>
+</opml>

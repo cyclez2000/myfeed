@@ -1,0 +1,19 @@
+{
+  "llm": {
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "api_key_env": "OPENAI_API_KEY",
+    "base_url": ""
+  },
+  "digest": {
+    "max_entries": 50,
+    "summary_length": "medium",
+    "language": "zh-CN",
+    "prompt_template": "请为以下 RSS 条目生成简洁的中文摘要，提取关键信息点。"
+  },
+  "output": {
+    "format": "markdown",
+    "directory": "./output/daily",
+    "filename_pattern": "{date}.md"
+  }
+}
