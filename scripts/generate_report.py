@@ -15,12 +15,15 @@ try:
     from google import genai
     from google.genai import types
     HAS_GEMINI = True
+    GEMINI_LIB = "google-genai"
 except ImportError:
     try:
         import google.generativeai as genai
         HAS_GEMINI = True
+        GEMINI_LIB = "google-generativeai"
     except ImportError:
         HAS_GEMINI = False
+        GEMINI_LIB = "none"
 
 
 def load_entries(json_path: str) -> list:
@@ -222,6 +225,7 @@ def main():
     # AI 摘要（如果配置了 API Key）
     api_key = os.environ.get("GOOGLE_API_KEY", "")
     ai_summary = ""
+    print(f"DEBUG: HAS_GEMINI={HAS_GEMINI}, GEMINI_LIB={GEMINI_LIB}, api_key_len={len(api_key) if api_key else 0}", file=sys.stderr)
     if api_key and HAS_GEMINI:
         print("正在生成 AI 摘要...", file=sys.stderr)
         ai_summary = generate_ai_summary(entries, api_key)

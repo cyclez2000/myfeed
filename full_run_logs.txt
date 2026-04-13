@@ -1,240 +1,238 @@
-digest	Set up job	﻿2026-04-13T05:49:50.8491903Z Current runner version: '2.333.1'
-digest	Set up job	2026-04-13T05:49:50.8513691Z ##[group]Runner Image Provisioner
-digest	Set up job	2026-04-13T05:49:50.8514437Z Hosted Compute Agent
-digest	Set up job	2026-04-13T05:49:50.8514976Z Version: 20260213.493
-digest	Set up job	2026-04-13T05:49:50.8515539Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
-digest	Set up job	2026-04-13T05:49:50.8516206Z Build Date: 2026-02-13T00:28:41Z
-digest	Set up job	2026-04-13T05:49:50.8516816Z Worker ID: {86463b67-a264-4a3a-9edd-301f476db217}
-digest	Set up job	2026-04-13T05:49:50.8517780Z Azure Region: westcentralus
-digest	Set up job	2026-04-13T05:49:50.8518285Z ##[endgroup]
-digest	Set up job	2026-04-13T05:49:50.8519980Z ##[group]Operating System
-digest	Set up job	2026-04-13T05:49:50.8520496Z Ubuntu
-digest	Set up job	2026-04-13T05:49:50.8520945Z 24.04.4
-digest	Set up job	2026-04-13T05:49:50.8521338Z LTS
-digest	Set up job	2026-04-13T05:49:50.8521766Z ##[endgroup]
-digest	Set up job	2026-04-13T05:49:50.8522177Z ##[group]Runner Image
-digest	Set up job	2026-04-13T05:49:50.8522676Z Image: ubuntu-24.04
-digest	Set up job	2026-04-13T05:49:50.8523149Z Version: 20260406.80.1
-digest	Set up job	2026-04-13T05:49:50.8524036Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260406.80/images/ubuntu/Ubuntu2404-Readme.md
-digest	Set up job	2026-04-13T05:49:50.8525470Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260406.80
-digest	Set up job	2026-04-13T05:49:50.8526247Z ##[endgroup]
-digest	Set up job	2026-04-13T05:49:50.8527312Z ##[group]GITHUB_TOKEN Permissions
-digest	Set up job	2026-04-13T05:49:50.8529262Z Contents: write
-digest	Set up job	2026-04-13T05:49:50.8529705Z Metadata: read
-digest	Set up job	2026-04-13T05:49:50.8530198Z ##[endgroup]
-digest	Set up job	2026-04-13T05:49:50.8532125Z Secret source: Actions
-digest	Set up job	2026-04-13T05:49:50.8532932Z Prepare workflow directory
-digest	Set up job	2026-04-13T05:49:50.8824381Z Prepare all required actions
-digest	Set up job	2026-04-13T05:49:50.8860758Z Getting action download info
-digest	Set up job	2026-04-13T05:49:51.3104012Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
-digest	Set up job	2026-04-13T05:49:51.4683288Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
-digest	Set up job	2026-04-13T05:49:51.6693823Z Complete job name: digest
-digest	Checkout repository	﻿2026-04-13T05:49:51.7932321Z ##[group]Run actions/checkout@v4
-digest	Checkout repository	2026-04-13T05:49:51.7933356Z with:
-digest	Checkout repository	2026-04-13T05:49:51.7933828Z   fetch-depth: 0
-digest	Checkout repository	2026-04-13T05:49:51.7934576Z   token: ***
-digest	Checkout repository	2026-04-13T05:49:51.7935055Z   repository: cyclez2000/myfeed
-digest	Checkout repository	2026-04-13T05:49:51.7935630Z   ssh-strict: true
-digest	Checkout repository	2026-04-13T05:49:51.7936086Z   ssh-user: git
-digest	Checkout repository	2026-04-13T05:49:51.7936615Z   persist-credentials: true
-digest	Checkout repository	2026-04-13T05:49:51.7937282Z   clean: true
-digest	Checkout repository	2026-04-13T05:49:51.7937799Z   sparse-checkout-cone-mode: true
-digest	Checkout repository	2026-04-13T05:49:51.7938412Z   fetch-tags: false
-digest	Checkout repository	2026-04-13T05:49:51.7938894Z   show-progress: true
-digest	Checkout repository	2026-04-13T05:49:51.7939407Z   lfs: false
-digest	Checkout repository	2026-04-13T05:49:51.7939855Z   submodules: false
-digest	Checkout repository	2026-04-13T05:49:51.7940393Z   set-safe-directory: true
-digest	Checkout repository	2026-04-13T05:49:51.7941219Z ##[endgroup]
-digest	Checkout repository	2026-04-13T05:49:51.8994420Z Syncing repository: cyclez2000/myfeed
-digest	Checkout repository	2026-04-13T05:49:51.8998161Z ##[group]Getting Git version info
-digest	Checkout repository	2026-04-13T05:49:51.8999779Z Working directory is '/home/runner/work/myfeed/myfeed'
-digest	Checkout repository	2026-04-13T05:49:51.9001845Z [command]/usr/bin/git version
-digest	Checkout repository	2026-04-13T05:49:51.9270968Z git version 2.53.0
-digest	Checkout repository	2026-04-13T05:49:51.9294811Z ##[endgroup]
-digest	Checkout repository	2026-04-13T05:49:51.9310033Z Temporarily overriding HOME='/home/runner/work/_temp/68b51dc7-b8fa-41ed-8dd7-a4634bba5c85' before making global git config changes
-digest	Checkout repository	2026-04-13T05:49:51.9312968Z Adding repository directory to the temporary git global config as a safe directory
-digest	Checkout repository	2026-04-13T05:49:51.9325420Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/myfeed/myfeed
-digest	Checkout repository	2026-04-13T05:49:51.9354361Z Deleting the contents of '/home/runner/work/myfeed/myfeed'
-digest	Checkout repository	2026-04-13T05:49:51.9358332Z ##[group]Initializing the repository
-digest	Checkout repository	2026-04-13T05:49:51.9364312Z [command]/usr/bin/git init /home/runner/work/myfeed/myfeed
-digest	Checkout repository	2026-04-13T05:49:51.9420661Z hint: Using 'master' as the name for the initial branch. This default branch name
-digest	Checkout repository	2026-04-13T05:49:51.9423349Z hint: will change to "main" in Git 3.0. To configure the initial branch name
-digest	Checkout repository	2026-04-13T05:49:51.9426421Z hint: to use in all of your new repositories, which will suppress this warning,
-digest	Checkout repository	2026-04-13T05:49:51.9428760Z hint: call:
-digest	Checkout repository	2026-04-13T05:49:51.9431121Z hint:
-digest	Checkout repository	2026-04-13T05:49:51.9433283Z hint: 	git config --global init.defaultBranch <name>
-digest	Checkout repository	2026-04-13T05:49:51.9434922Z hint:
-digest	Checkout repository	2026-04-13T05:49:51.9436919Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
-digest	Checkout repository	2026-04-13T05:49:51.9439774Z hint: 'development'. The just-created branch can be renamed via this command:
-digest	Checkout repository	2026-04-13T05:49:51.9441824Z hint:
-digest	Checkout repository	2026-04-13T05:49:51.9443410Z hint: 	git branch -m <name>
-digest	Checkout repository	2026-04-13T05:49:51.9444251Z hint:
-digest	Checkout repository	2026-04-13T05:49:51.9445063Z hint: Disable this message with "git config set advice.defaultBranchName false"
-digest	Checkout repository	2026-04-13T05:49:51.9546739Z Initialized empty Git repository in /home/runner/work/myfeed/myfeed/.git/
-digest	Checkout repository	2026-04-13T05:49:51.9550118Z [command]/usr/bin/git remote add origin https://github.com/cyclez2000/myfeed
-digest	Checkout repository	2026-04-13T05:49:51.9552744Z ##[endgroup]
-digest	Checkout repository	2026-04-13T05:49:51.9554056Z ##[group]Disabling automatic garbage collection
-digest	Checkout repository	2026-04-13T05:49:51.9555260Z [command]/usr/bin/git config --local gc.auto 0
-digest	Checkout repository	2026-04-13T05:49:51.9557832Z ##[endgroup]
-digest	Checkout repository	2026-04-13T05:49:51.9559014Z ##[group]Setting up auth
-digest	Checkout repository	2026-04-13T05:49:51.9560214Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-digest	Checkout repository	2026-04-13T05:49:51.9564120Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-digest	Checkout repository	2026-04-13T05:49:51.9790234Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-digest	Checkout repository	2026-04-13T05:49:51.9813046Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-digest	Checkout repository	2026-04-13T05:49:51.9978484Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-digest	Checkout repository	2026-04-13T05:49:52.0001576Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-digest	Checkout repository	2026-04-13T05:49:52.0177239Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
-digest	Checkout repository	2026-04-13T05:49:52.0205494Z ##[endgroup]
-digest	Checkout repository	2026-04-13T05:49:52.0207282Z ##[group]Fetching the repository
-digest	Checkout repository	2026-04-13T05:49:52.0214982Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
-digest	Checkout repository	2026-04-13T05:49:52.4457873Z From https://github.com/cyclez2000/myfeed
-digest	Checkout repository	2026-04-13T05:49:52.4459307Z  * [new branch]      main       -> origin/main
-digest	Checkout repository	2026-04-13T05:49:52.4488052Z [command]/usr/bin/git branch --list --remote origin/main
-digest	Checkout repository	2026-04-13T05:49:52.4506096Z   origin/main
-digest	Checkout repository	2026-04-13T05:49:52.4514476Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
-digest	Checkout repository	2026-04-13T05:49:52.4530623Z 0997f79bfa6e9bff552527fcad63971fae12a563
-digest	Checkout repository	2026-04-13T05:49:52.4534964Z ##[endgroup]
-digest	Checkout repository	2026-04-13T05:49:52.4536995Z ##[group]Determining the checkout info
-digest	Checkout repository	2026-04-13T05:49:52.4539489Z ##[endgroup]
-digest	Checkout repository	2026-04-13T05:49:52.4540754Z [command]/usr/bin/git sparse-checkout disable
-digest	Checkout repository	2026-04-13T05:49:52.4569856Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
-digest	Checkout repository	2026-04-13T05:49:52.4590260Z ##[group]Checking out the ref
-digest	Checkout repository	2026-04-13T05:49:52.4593680Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
-digest	Checkout repository	2026-04-13T05:49:52.4627983Z Switched to a new branch 'main'
-digest	Checkout repository	2026-04-13T05:49:52.4629381Z branch 'main' set up to track 'origin/main'.
-digest	Checkout repository	2026-04-13T05:49:52.4634136Z ##[endgroup]
-digest	Checkout repository	2026-04-13T05:49:52.4659248Z [command]/usr/bin/git log -1 --format=%H
-digest	Checkout repository	2026-04-13T05:49:52.4676598Z 0997f79bfa6e9bff552527fcad63971fae12a563
-digest	Install feed CLI	﻿2026-04-13T05:49:52.4867501Z ##[group]Run curl -sL https://github.com/odysseus0/feed/releases/download/v0.2.0/feed_0.2.0_linux_amd64.tar.gz | tar xz
-digest	Install feed CLI	2026-04-13T05:49:52.4871003Z [36;1mcurl -sL https://github.com/odysseus0/feed/releases/download/v0.2.0/feed_0.2.0_linux_amd64.tar.gz | tar xz[0m
-digest	Install feed CLI	2026-04-13T05:49:52.4873190Z [36;1msudo mv feed /usr/local/bin/[0m
-digest	Install feed CLI	2026-04-13T05:49:52.4874446Z [36;1mfeed --version[0m
-digest	Install feed CLI	2026-04-13T05:49:52.4892366Z shell: /usr/bin/bash -e {0}
-digest	Install feed CLI	2026-04-13T05:49:52.4893382Z ##[endgroup]
-digest	Install feed CLI	2026-04-13T05:49:53.0561583Z feed version 0.2.0
-digest	Setup Python	﻿2026-04-13T05:49:53.0731706Z ##[group]Run actions/setup-python@v5
-digest	Setup Python	2026-04-13T05:49:53.0732717Z with:
-digest	Setup Python	2026-04-13T05:49:53.0733425Z   python-version: 3.12
-digest	Setup Python	2026-04-13T05:49:53.0734234Z   check-latest: false
-digest	Setup Python	2026-04-13T05:49:53.0735254Z   token: ***
-digest	Setup Python	2026-04-13T05:49:53.0735953Z   update-environment: true
-digest	Setup Python	2026-04-13T05:49:53.0736827Z   allow-prereleases: false
-digest	Setup Python	2026-04-13T05:49:53.0737861Z   freethreaded: false
-digest	Setup Python	2026-04-13T05:49:53.0738620Z ##[endgroup]
-digest	Setup Python	2026-04-13T05:49:53.2283845Z ##[group]Installed versions
-digest	Setup Python	2026-04-13T05:49:53.2726139Z Successfully set up CPython (3.12.13)
-digest	Setup Python	2026-04-13T05:49:53.2728620Z ##[endgroup]
-digest	Install Python dependencies	﻿2026-04-13T05:49:53.2842691Z ##[group]Run pip install -q google-generativeai
-digest	Install Python dependencies	2026-04-13T05:49:53.2843883Z [36;1mpip install -q google-generativeai[0m
-digest	Install Python dependencies	2026-04-13T05:49:53.2844934Z [36;1mecho "Dependencies installed"[0m
-digest	Install Python dependencies	2026-04-13T05:49:53.2954878Z shell: /usr/bin/bash -e {0}
-digest	Install Python dependencies	2026-04-13T05:49:53.2955725Z env:
-digest	Install Python dependencies	2026-04-13T05:49:53.2956587Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Install Python dependencies	2026-04-13T05:49:53.2958333Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
-digest	Install Python dependencies	2026-04-13T05:49:53.2959826Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Install Python dependencies	2026-04-13T05:49:53.2961162Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Install Python dependencies	2026-04-13T05:49:53.2962514Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Install Python dependencies	2026-04-13T05:49:53.2963893Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
-digest	Install Python dependencies	2026-04-13T05:49:53.2965037Z ##[endgroup]
-digest	Install Python dependencies	2026-04-13T05:50:04.2562394Z Dependencies installed
-digest	Import feeds	﻿2026-04-13T05:50:04.2591527Z ##[group]Run feed import feeds.opml
-digest	Import feeds	2026-04-13T05:50:04.2591849Z [36;1mfeed import feeds.opml[0m
-digest	Import feeds	2026-04-13T05:50:04.2605044Z shell: /usr/bin/bash -e {0}
-digest	Import feeds	2026-04-13T05:50:04.2605290Z env:
-digest	Import feeds	2026-04-13T05:50:04.2605543Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Import feeds	2026-04-13T05:50:04.2605950Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
-digest	Import feeds	2026-04-13T05:50:04.2606337Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Import feeds	2026-04-13T05:50:04.2606675Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Import feeds	2026-04-13T05:50:04.2607016Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Import feeds	2026-04-13T05:50:04.2607608Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
-digest	Import feeds	2026-04-13T05:50:04.2607903Z ##[endgroup]
-digest	Import feeds	2026-04-13T05:50:04.2752728Z Imported 1 feeds from feeds.opml
-digest	Import feeds	2026-04-13T05:50:04.2765022Z Added: 1, Skipped existing: 0, Failed: 0
-digest	Fetch feeds	﻿2026-04-13T05:50:04.2787409Z ##[group]Run feed fetch
-digest	Fetch feeds	2026-04-13T05:50:04.2787697Z [36;1mfeed fetch[0m
-digest	Fetch feeds	2026-04-13T05:50:04.2800193Z shell: /usr/bin/bash -e {0}
-digest	Fetch feeds	2026-04-13T05:50:04.2800433Z env:
-digest	Fetch feeds	2026-04-13T05:50:04.2800675Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Fetch feeds	2026-04-13T05:50:04.2801090Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
-digest	Fetch feeds	2026-04-13T05:50:04.2801497Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Fetch feeds	2026-04-13T05:50:04.2801844Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Fetch feeds	2026-04-13T05:50:04.2802308Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Fetch feeds	2026-04-13T05:50:04.2802725Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
-digest	Fetch feeds	2026-04-13T05:50:04.2803029Z ##[endgroup]
-digest	Fetch feeds	2026-04-13T05:50:05.0506618Z [1/1] 橘鸦AI早报 -> 55 new, 0 updated
-digest	Fetch feeds	2026-04-13T05:50:05.0507358Z FEED_ID  FEED    NEW  UPDATED  NOT_MODIFIED  ERROR
-digest	Fetch feeds	2026-04-13T05:50:05.0507957Z 1        橘鸦AI早报  55   0        false         
-digest	Export entries to JSON	﻿2026-04-13T05:50:05.0555199Z ##[group]Run feed get entries -o json --limit 100 > data/entries.json
-digest	Export entries to JSON	2026-04-13T05:50:05.0555687Z [36;1mfeed get entries -o json --limit 100 > data/entries.json[0m
-digest	Export entries to JSON	2026-04-13T05:50:05.0569153Z shell: /usr/bin/bash -e {0}
-digest	Export entries to JSON	2026-04-13T05:50:05.0569403Z env:
-digest	Export entries to JSON	2026-04-13T05:50:05.0569650Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Export entries to JSON	2026-04-13T05:50:05.0570041Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
-digest	Export entries to JSON	2026-04-13T05:50:05.0570643Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Export entries to JSON	2026-04-13T05:50:05.0570993Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Export entries to JSON	2026-04-13T05:50:05.0571337Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Export entries to JSON	2026-04-13T05:50:05.0571682Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
-digest	Export entries to JSON	2026-04-13T05:50:05.0571971Z ##[endgroup]
-digest	Generate daily report	﻿2026-04-13T05:50:05.1135737Z ##[group]Run python scripts/generate_report.py
-digest	Generate daily report	2026-04-13T05:50:05.1136096Z [36;1mpython scripts/generate_report.py[0m
-digest	Generate daily report	2026-04-13T05:50:05.1149287Z shell: /usr/bin/bash -e {0}
-digest	Generate daily report	2026-04-13T05:50:05.1149538Z env:
-digest	Generate daily report	2026-04-13T05:50:05.1149781Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Generate daily report	2026-04-13T05:50:05.1150189Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
-digest	Generate daily report	2026-04-13T05:50:05.1150581Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Generate daily report	2026-04-13T05:50:05.1150918Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Generate daily report	2026-04-13T05:50:05.1151302Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Generate daily report	2026-04-13T05:50:05.1151640Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
-digest	Generate daily report	2026-04-13T05:50:05.1151935Z   GOOGLE_API_KEY: 
-digest	Generate daily report	2026-04-13T05:50:05.1152116Z ##[endgroup]
-digest	Generate daily report	2026-04-13T05:50:06.4763011Z /home/runner/work/myfeed/myfeed/scripts/generate_report.py:15: FutureWarning: 
-digest	Generate daily report	2026-04-13T05:50:06.4763819Z 
-digest	Generate daily report	2026-04-13T05:50:06.4764386Z All support for the `google.generativeai` package has ended. It will no longer be receiving 
-digest	Generate daily report	2026-04-13T05:50:06.4765498Z updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
-digest	Generate daily report	2026-04-13T05:50:06.4766240Z See README for more details:
-digest	Generate daily report	2026-04-13T05:50:06.4766499Z 
-digest	Generate daily report	2026-04-13T05:50:06.4766994Z https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
-digest	Generate daily report	2026-04-13T05:50:06.4767748Z 
-digest	Generate daily report	2026-04-13T05:50:06.4767970Z   import google.generativeai as genai
-digest	Generate daily report	2026-04-13T05:50:06.5001542Z 加载条目: /home/runner/work/myfeed/myfeed/data/entries.json
-digest	Generate daily report	2026-04-13T05:50:06.5002555Z 共 55 条条目
-digest	Generate daily report	2026-04-13T05:50:06.5003114Z 生成 Markdown 报告...
-digest	Generate daily report	2026-04-13T05:50:06.5003993Z 已保存: /home/runner/work/myfeed/myfeed/output/daily/2026-04-13.md
-digest	Commit and push results	﻿2026-04-13T05:50:06.5710546Z ##[group]Run git config user.name "github-actions[bot]"
-digest	Commit and push results	2026-04-13T05:50:06.5710936Z [36;1mgit config user.name "github-actions[bot]"[0m
-digest	Commit and push results	2026-04-13T05:50:06.5711311Z [36;1mgit config user.email "github-actions[bot]@users.noreply.github.com"[0m
-digest	Commit and push results	2026-04-13T05:50:06.5711724Z [36;1mgit add output/daily/ data/entries.json[0m
-digest	Commit and push results	2026-04-13T05:50:06.5712121Z [36;1mgit diff --staged --quiet || git commit -m "📰 Daily digest $(date +%Y-%m-%d)"[0m
-digest	Commit and push results	2026-04-13T05:50:06.5712484Z [36;1mgit push[0m
-digest	Commit and push results	2026-04-13T05:50:06.5725377Z shell: /usr/bin/bash -e {0}
-digest	Commit and push results	2026-04-13T05:50:06.5725617Z env:
-digest	Commit and push results	2026-04-13T05:50:06.5725905Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Commit and push results	2026-04-13T05:50:06.5726300Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
-digest	Commit and push results	2026-04-13T05:50:06.5726708Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Commit and push results	2026-04-13T05:50:06.5727059Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Commit and push results	2026-04-13T05:50:06.5727589Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
-digest	Commit and push results	2026-04-13T05:50:06.5727998Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
-digest	Commit and push results	2026-04-13T05:50:06.5728281Z ##[endgroup]
-digest	Commit and push results	2026-04-13T05:50:06.6386898Z [main bbe324e] 📰 Daily digest 2026-04-13
-digest	Commit and push results	2026-04-13T05:50:06.6387483Z  2 files changed, 1233 insertions(+)
-digest	Commit and push results	2026-04-13T05:50:06.6387758Z  create mode 100644 data/entries.json
-digest	Commit and push results	2026-04-13T05:50:06.6388020Z  create mode 100644 output/daily/2026-04-13.md
-digest	Commit and push results	2026-04-13T05:50:07.6925333Z To https://github.com/cyclez2000/myfeed
-digest	Commit and push results	2026-04-13T05:50:07.6925886Z    0997f79..bbe324e  main -> main
-digest	Post Setup Python	﻿2026-04-13T05:50:07.7019721Z Post job cleanup.
-digest	Post Checkout repository	﻿2026-04-13T05:50:07.8634310Z Post job cleanup.
-digest	Post Checkout repository	2026-04-13T05:50:07.9524330Z [command]/usr/bin/git version
-digest	Post Checkout repository	2026-04-13T05:50:07.9557750Z git version 2.53.0
-digest	Post Checkout repository	2026-04-13T05:50:07.9599588Z Temporarily overriding HOME='/home/runner/work/_temp/a96e3636-10b1-4fb9-a2e4-f79206e2beda' before making global git config changes
-digest	Post Checkout repository	2026-04-13T05:50:07.9600891Z Adding repository directory to the temporary git global config as a safe directory
-digest	Post Checkout repository	2026-04-13T05:50:07.9604713Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/myfeed/myfeed
-digest	Post Checkout repository	2026-04-13T05:50:07.9635722Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
-digest	Post Checkout repository	2026-04-13T05:50:07.9662195Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
-digest	Post Checkout repository	2026-04-13T05:50:07.9836197Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
-digest	Post Checkout repository	2026-04-13T05:50:07.9853013Z http.https://github.com/.extraheader
-digest	Post Checkout repository	2026-04-13T05:50:07.9863053Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
-digest	Post Checkout repository	2026-04-13T05:50:07.9888307Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
-digest	Post Checkout repository	2026-04-13T05:50:08.0107587Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
-digest	Post Checkout repository	2026-04-13T05:50:08.0135880Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
-digest	Complete job	﻿2026-04-13T05:50:08.0416317Z Cleaning up orphan processes
-digest	Complete job	2026-04-13T05:50:08.0717013Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v5. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+digest	Set up job	﻿2026-04-13T06:08:49.1429461Z Current runner version: '2.333.1'
+digest	Set up job	2026-04-13T06:08:49.1456231Z ##[group]Runner Image Provisioner
+digest	Set up job	2026-04-13T06:08:49.1457057Z Hosted Compute Agent
+digest	Set up job	2026-04-13T06:08:49.1457751Z Version: 20260213.493
+digest	Set up job	2026-04-13T06:08:49.1458316Z Commit: 5c115507f6dd24b8de37d8bbe0bb4509d0cc0fa3
+digest	Set up job	2026-04-13T06:08:49.1459028Z Build Date: 2026-02-13T00:28:41Z
+digest	Set up job	2026-04-13T06:08:49.1459704Z Worker ID: {90f0c974-f4b5-4ec7-99ea-8b9848a5624a}
+digest	Set up job	2026-04-13T06:08:49.1460387Z Azure Region: westus
+digest	Set up job	2026-04-13T06:08:49.1460899Z ##[endgroup]
+digest	Set up job	2026-04-13T06:08:49.1463051Z ##[group]Operating System
+digest	Set up job	2026-04-13T06:08:49.1463728Z Ubuntu
+digest	Set up job	2026-04-13T06:08:49.1464211Z 24.04.4
+digest	Set up job	2026-04-13T06:08:49.1464745Z LTS
+digest	Set up job	2026-04-13T06:08:49.1465177Z ##[endgroup]
+digest	Set up job	2026-04-13T06:08:49.1465728Z ##[group]Runner Image
+digest	Set up job	2026-04-13T06:08:49.1466280Z Image: ubuntu-24.04
+digest	Set up job	2026-04-13T06:08:49.1466809Z Version: 20260406.80.1
+digest	Set up job	2026-04-13T06:08:49.1467761Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260406.80/images/ubuntu/Ubuntu2404-Readme.md
+digest	Set up job	2026-04-13T06:08:49.1469426Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260406.80
+digest	Set up job	2026-04-13T06:08:49.1470357Z ##[endgroup]
+digest	Set up job	2026-04-13T06:08:49.1471742Z ##[group]GITHUB_TOKEN Permissions
+digest	Set up job	2026-04-13T06:08:49.1473915Z Contents: write
+digest	Set up job	2026-04-13T06:08:49.1474440Z Metadata: read
+digest	Set up job	2026-04-13T06:08:49.1475043Z ##[endgroup]
+digest	Set up job	2026-04-13T06:08:49.1477227Z Secret source: Actions
+digest	Set up job	2026-04-13T06:08:49.1478187Z Prepare workflow directory
+digest	Set up job	2026-04-13T06:08:49.1811750Z Prepare all required actions
+digest	Set up job	2026-04-13T06:08:49.1850122Z Getting action download info
+digest	Set up job	2026-04-13T06:08:49.7089846Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+digest	Set up job	2026-04-13T06:08:49.8350170Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+digest	Set up job	2026-04-13T06:08:50.0503291Z Complete job name: digest
+digest	Checkout repository	﻿2026-04-13T06:08:50.1294565Z ##[group]Run actions/checkout@v4
+digest	Checkout repository	2026-04-13T06:08:50.1295441Z with:
+digest	Checkout repository	2026-04-13T06:08:50.1295853Z   fetch-depth: 0
+digest	Checkout repository	2026-04-13T06:08:50.1296505Z   token: ***
+digest	Checkout repository	2026-04-13T06:08:50.1296903Z   repository: cyclez2000/myfeed
+digest	Checkout repository	2026-04-13T06:08:50.1297364Z   ssh-strict: true
+digest	Checkout repository	2026-04-13T06:08:50.1297743Z   ssh-user: git
+digest	Checkout repository	2026-04-13T06:08:50.1298138Z   persist-credentials: true
+digest	Checkout repository	2026-04-13T06:08:50.1298570Z   clean: true
+digest	Checkout repository	2026-04-13T06:08:50.1298969Z   sparse-checkout-cone-mode: true
+digest	Checkout repository	2026-04-13T06:08:50.1299442Z   fetch-tags: false
+digest	Checkout repository	2026-04-13T06:08:50.1299845Z   show-progress: true
+digest	Checkout repository	2026-04-13T06:08:50.1300255Z   lfs: false
+digest	Checkout repository	2026-04-13T06:08:50.1300618Z   submodules: false
+digest	Checkout repository	2026-04-13T06:08:50.1301021Z   set-safe-directory: true
+digest	Checkout repository	2026-04-13T06:08:50.1302136Z ##[endgroup]
+digest	Checkout repository	2026-04-13T06:08:50.2403906Z Syncing repository: cyclez2000/myfeed
+digest	Checkout repository	2026-04-13T06:08:50.2405774Z ##[group]Getting Git version info
+digest	Checkout repository	2026-04-13T06:08:50.2406462Z Working directory is '/home/runner/work/myfeed/myfeed'
+digest	Checkout repository	2026-04-13T06:08:50.2407375Z [command]/usr/bin/git version
+digest	Checkout repository	2026-04-13T06:08:50.2518037Z git version 2.53.0
+digest	Checkout repository	2026-04-13T06:08:50.2558922Z ##[endgroup]
+digest	Checkout repository	2026-04-13T06:08:50.2579099Z Temporarily overriding HOME='/home/runner/work/_temp/bb3bc40b-1e1c-48e2-9da0-fbe517e407ed' before making global git config changes
+digest	Checkout repository	2026-04-13T06:08:50.2581080Z Adding repository directory to the temporary git global config as a safe directory
+digest	Checkout repository	2026-04-13T06:08:50.2597376Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/myfeed/myfeed
+digest	Checkout repository	2026-04-13T06:08:50.2635560Z Deleting the contents of '/home/runner/work/myfeed/myfeed'
+digest	Checkout repository	2026-04-13T06:08:50.2639721Z ##[group]Initializing the repository
+digest	Checkout repository	2026-04-13T06:08:50.2648777Z [command]/usr/bin/git init /home/runner/work/myfeed/myfeed
+digest	Checkout repository	2026-04-13T06:08:50.2717300Z hint: Using 'master' as the name for the initial branch. This default branch name
+digest	Checkout repository	2026-04-13T06:08:50.2718431Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+digest	Checkout repository	2026-04-13T06:08:50.2719789Z hint: to use in all of your new repositories, which will suppress this warning,
+digest	Checkout repository	2026-04-13T06:08:50.2721134Z hint: call:
+digest	Checkout repository	2026-04-13T06:08:50.2722264Z hint:
+digest	Checkout repository	2026-04-13T06:08:50.2723510Z hint: 	git config --global init.defaultBranch <name>
+digest	Checkout repository	2026-04-13T06:08:50.2724553Z hint:
+digest	Checkout repository	2026-04-13T06:08:50.2725527Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+digest	Checkout repository	2026-04-13T06:08:50.2727153Z hint: 'development'. The just-created branch can be renamed via this command:
+digest	Checkout repository	2026-04-13T06:08:50.2728369Z hint:
+digest	Checkout repository	2026-04-13T06:08:50.2728990Z hint: 	git branch -m <name>
+digest	Checkout repository	2026-04-13T06:08:50.2729704Z hint:
+digest	Checkout repository	2026-04-13T06:08:50.2730735Z hint: Disable this message with "git config set advice.defaultBranchName false"
+digest	Checkout repository	2026-04-13T06:08:50.2732727Z Initialized empty Git repository in /home/runner/work/myfeed/myfeed/.git/
+digest	Checkout repository	2026-04-13T06:08:50.2736979Z [command]/usr/bin/git remote add origin https://github.com/cyclez2000/myfeed
+digest	Checkout repository	2026-04-13T06:08:50.2767227Z ##[endgroup]
+digest	Checkout repository	2026-04-13T06:08:50.2767960Z ##[group]Disabling automatic garbage collection
+digest	Checkout repository	2026-04-13T06:08:50.2771912Z [command]/usr/bin/git config --local gc.auto 0
+digest	Checkout repository	2026-04-13T06:08:50.2803408Z ##[endgroup]
+digest	Checkout repository	2026-04-13T06:08:50.2804622Z ##[group]Setting up auth
+digest	Checkout repository	2026-04-13T06:08:50.2811584Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+digest	Checkout repository	2026-04-13T06:08:50.2842820Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+digest	Checkout repository	2026-04-13T06:08:50.3116167Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+digest	Checkout repository	2026-04-13T06:08:50.3145883Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+digest	Checkout repository	2026-04-13T06:08:50.3362457Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+digest	Checkout repository	2026-04-13T06:08:50.3393485Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+digest	Checkout repository	2026-04-13T06:08:50.3621918Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+digest	Checkout repository	2026-04-13T06:08:50.3655636Z ##[endgroup]
+digest	Checkout repository	2026-04-13T06:08:50.3656898Z ##[group]Fetching the repository
+digest	Checkout repository	2026-04-13T06:08:50.3665547Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+digest	Checkout repository	2026-04-13T06:08:51.1369276Z From https://github.com/cyclez2000/myfeed
+digest	Checkout repository	2026-04-13T06:08:51.1372020Z  * [new branch]      main       -> origin/main
+digest	Checkout repository	2026-04-13T06:08:51.1404710Z [command]/usr/bin/git branch --list --remote origin/main
+digest	Checkout repository	2026-04-13T06:08:51.1427755Z   origin/main
+digest	Checkout repository	2026-04-13T06:08:51.1435933Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+digest	Checkout repository	2026-04-13T06:08:51.1456027Z 861de2dae7702f65850956005bdf32715330af1f
+digest	Checkout repository	2026-04-13T06:08:51.1462894Z ##[endgroup]
+digest	Checkout repository	2026-04-13T06:08:51.1464737Z ##[group]Determining the checkout info
+digest	Checkout repository	2026-04-13T06:08:51.1466835Z ##[endgroup]
+digest	Checkout repository	2026-04-13T06:08:51.1468568Z [command]/usr/bin/git sparse-checkout disable
+digest	Checkout repository	2026-04-13T06:08:51.3225018Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+digest	Checkout repository	2026-04-13T06:08:51.3253945Z ##[group]Checking out the ref
+digest	Checkout repository	2026-04-13T06:08:51.3257783Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+digest	Checkout repository	2026-04-13T06:08:51.4200353Z Switched to a new branch 'main'
+digest	Checkout repository	2026-04-13T06:08:51.4201913Z branch 'main' set up to track 'origin/main'.
+digest	Checkout repository	2026-04-13T06:08:51.4208656Z ##[endgroup]
+digest	Checkout repository	2026-04-13T06:08:51.4249706Z [command]/usr/bin/git log -1 --format=%H
+digest	Checkout repository	2026-04-13T06:08:51.4274133Z 861de2dae7702f65850956005bdf32715330af1f
+digest	Install feed CLI	﻿2026-04-13T06:08:51.4465059Z ##[group]Run curl -sL https://github.com/odysseus0/feed/releases/download/v0.2.0/feed_0.2.0_linux_amd64.tar.gz | tar xz
+digest	Install feed CLI	2026-04-13T06:08:51.4466134Z [36;1mcurl -sL https://github.com/odysseus0/feed/releases/download/v0.2.0/feed_0.2.0_linux_amd64.tar.gz | tar xz[0m
+digest	Install feed CLI	2026-04-13T06:08:51.4466729Z [36;1msudo mv feed /usr/local/bin/[0m
+digest	Install feed CLI	2026-04-13T06:08:51.4467016Z [36;1mfeed --version[0m
+digest	Install feed CLI	2026-04-13T06:08:51.4492488Z shell: /usr/bin/bash -e {0}
+digest	Install feed CLI	2026-04-13T06:08:51.4492835Z ##[endgroup]
+digest	Install feed CLI	2026-04-13T06:08:51.9778601Z feed version 0.2.0
+digest	Setup Python	﻿2026-04-13T06:08:51.9882193Z ##[group]Run actions/setup-python@v5
+digest	Setup Python	2026-04-13T06:08:51.9882540Z with:
+digest	Setup Python	2026-04-13T06:08:51.9882731Z   python-version: 3.12
+digest	Setup Python	2026-04-13T06:08:51.9882940Z   check-latest: false
+digest	Setup Python	2026-04-13T06:08:51.9883290Z   token: ***
+digest	Setup Python	2026-04-13T06:08:51.9883496Z   update-environment: true
+digest	Setup Python	2026-04-13T06:08:51.9883719Z   allow-prereleases: false
+digest	Setup Python	2026-04-13T06:08:51.9883926Z   freethreaded: false
+digest	Setup Python	2026-04-13T06:08:51.9884121Z ##[endgroup]
+digest	Setup Python	2026-04-13T06:08:52.1575916Z ##[group]Installed versions
+digest	Setup Python	2026-04-13T06:08:52.1673392Z Successfully set up CPython (3.12.13)
+digest	Setup Python	2026-04-13T06:08:52.1674273Z ##[endgroup]
+digest	Install Python dependencies	﻿2026-04-13T06:08:52.1784162Z ##[group]Run pip install -q google-generativeai
+digest	Install Python dependencies	2026-04-13T06:08:52.1784583Z [36;1mpip install -q google-generativeai[0m
+digest	Install Python dependencies	2026-04-13T06:08:52.1784913Z [36;1mecho "Dependencies installed"[0m
+digest	Install Python dependencies	2026-04-13T06:08:52.1821572Z shell: /usr/bin/bash -e {0}
+digest	Install Python dependencies	2026-04-13T06:08:52.1821884Z env:
+digest	Install Python dependencies	2026-04-13T06:08:52.1822166Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Install Python dependencies	2026-04-13T06:08:52.1822619Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+digest	Install Python dependencies	2026-04-13T06:08:52.1823030Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Install Python dependencies	2026-04-13T06:08:52.1823402Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Install Python dependencies	2026-04-13T06:08:52.1823768Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Install Python dependencies	2026-04-13T06:08:52.1824138Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+digest	Install Python dependencies	2026-04-13T06:08:52.1824442Z ##[endgroup]
+digest	Install Python dependencies	2026-04-13T06:09:02.3544172Z Dependencies installed
+digest	Import feeds	﻿2026-04-13T06:09:02.3576705Z ##[group]Run feed import feeds.opml
+digest	Import feeds	2026-04-13T06:09:02.3577045Z [36;1mfeed import feeds.opml[0m
+digest	Import feeds	2026-04-13T06:09:02.3598997Z shell: /usr/bin/bash -e {0}
+digest	Import feeds	2026-04-13T06:09:02.3599247Z env:
+digest	Import feeds	2026-04-13T06:09:02.3599490Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Import feeds	2026-04-13T06:09:02.3599948Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+digest	Import feeds	2026-04-13T06:09:02.3600365Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Import feeds	2026-04-13T06:09:02.3600719Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Import feeds	2026-04-13T06:09:02.3601080Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Import feeds	2026-04-13T06:09:02.3601639Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+digest	Import feeds	2026-04-13T06:09:02.3601948Z ##[endgroup]
+digest	Import feeds	2026-04-13T06:09:02.3786482Z Imported 1 feeds from feeds.opml
+digest	Import feeds	2026-04-13T06:09:02.3787178Z Added: 1, Skipped existing: 0, Failed: 0
+digest	Fetch feeds	﻿2026-04-13T06:09:02.3830428Z ##[group]Run feed fetch
+digest	Fetch feeds	2026-04-13T06:09:02.3830716Z [36;1mfeed fetch[0m
+digest	Fetch feeds	2026-04-13T06:09:02.3852923Z shell: /usr/bin/bash -e {0}
+digest	Fetch feeds	2026-04-13T06:09:02.3853167Z env:
+digest	Fetch feeds	2026-04-13T06:09:02.3853425Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Fetch feeds	2026-04-13T06:09:02.3853852Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+digest	Fetch feeds	2026-04-13T06:09:02.3854290Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Fetch feeds	2026-04-13T06:09:02.3854651Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Fetch feeds	2026-04-13T06:09:02.3855027Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Fetch feeds	2026-04-13T06:09:02.3855405Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+digest	Fetch feeds	2026-04-13T06:09:02.3855709Z ##[endgroup]
+digest	Fetch feeds	2026-04-13T06:09:03.0732808Z [1/1] 橘鸦AI早报 -> 55 new, 0 updated
+digest	Fetch feeds	2026-04-13T06:09:03.0733602Z FEED_ID  FEED    NEW  UPDATED  NOT_MODIFIED  ERROR
+digest	Fetch feeds	2026-04-13T06:09:03.0734496Z 1        橘鸦AI早报  55   0        false         
+digest	Export entries to JSON	﻿2026-04-13T06:09:03.0825657Z ##[group]Run feed get entries -o json --limit 100 > data/entries.json
+digest	Export entries to JSON	2026-04-13T06:09:03.0826193Z [36;1mfeed get entries -o json --limit 100 > data/entries.json[0m
+digest	Export entries to JSON	2026-04-13T06:09:03.0847929Z shell: /usr/bin/bash -e {0}
+digest	Export entries to JSON	2026-04-13T06:09:03.0848166Z env:
+digest	Export entries to JSON	2026-04-13T06:09:03.0848420Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Export entries to JSON	2026-04-13T06:09:03.0848836Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+digest	Export entries to JSON	2026-04-13T06:09:03.0849485Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Export entries to JSON	2026-04-13T06:09:03.0849839Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Export entries to JSON	2026-04-13T06:09:03.0850203Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Export entries to JSON	2026-04-13T06:09:03.0850563Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+digest	Export entries to JSON	2026-04-13T06:09:03.0850856Z ##[endgroup]
+digest	Generate daily report	﻿2026-04-13T06:09:03.1516482Z ##[group]Run python scripts/generate_report.py
+digest	Generate daily report	2026-04-13T06:09:03.1516880Z [36;1mpython scripts/generate_report.py[0m
+digest	Generate daily report	2026-04-13T06:09:03.1539281Z shell: /usr/bin/bash -e {0}
+digest	Generate daily report	2026-04-13T06:09:03.1539557Z env:
+digest	Generate daily report	2026-04-13T06:09:03.1539826Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Generate daily report	2026-04-13T06:09:03.1540254Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+digest	Generate daily report	2026-04-13T06:09:03.1540673Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Generate daily report	2026-04-13T06:09:03.1541030Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Generate daily report	2026-04-13T06:09:03.1541822Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Generate daily report	2026-04-13T06:09:03.1542200Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+digest	Generate daily report	2026-04-13T06:09:03.1542502Z   GOOGLE_API_KEY: 
+digest	Generate daily report	2026-04-13T06:09:03.1542691Z ##[endgroup]
+digest	Generate daily report	2026-04-13T06:09:04.8510422Z /home/runner/work/myfeed/myfeed/scripts/generate_report.py:15: FutureWarning: 
+digest	Generate daily report	2026-04-13T06:09:04.8511138Z 
+digest	Generate daily report	2026-04-13T06:09:04.8512239Z All support for the `google.generativeai` package has ended. It will no longer be receiving 
+digest	Generate daily report	2026-04-13T06:09:04.8513579Z updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+digest	Generate daily report	2026-04-13T06:09:04.8514502Z See README for more details:
+digest	Generate daily report	2026-04-13T06:09:04.8514764Z 
+digest	Generate daily report	2026-04-13T06:09:04.8515208Z https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+digest	Generate daily report	2026-04-13T06:09:04.8515797Z 
+digest	Generate daily report	2026-04-13T06:09:04.8515978Z   import google.generativeai as genai
+digest	Generate daily report	2026-04-13T06:09:04.8760949Z 加载条目: /home/runner/work/myfeed/myfeed/data/entries.json
+digest	Generate daily report	2026-04-13T06:09:04.8762195Z 共 55 条条目
+digest	Generate daily report	2026-04-13T06:09:04.8762627Z 生成 Markdown 报告...
+digest	Generate daily report	2026-04-13T06:09:04.8763362Z 已保存: /home/runner/work/myfeed/myfeed/output/daily/2026-04-13.md
+digest	Commit and push results	﻿2026-04-13T06:09:05.0257809Z ##[group]Run git config user.name "github-actions[bot]"
+digest	Commit and push results	2026-04-13T06:09:05.0258299Z [36;1mgit config user.name "github-actions[bot]"[0m
+digest	Commit and push results	2026-04-13T06:09:05.0258710Z [36;1mgit config user.email "github-actions[bot]@users.noreply.github.com"[0m
+digest	Commit and push results	2026-04-13T06:09:05.0259129Z [36;1mgit add output/daily/ data/entries.json[0m
+digest	Commit and push results	2026-04-13T06:09:05.0259707Z [36;1mgit diff --staged --quiet || git commit -m "📰 Daily digest $(date +%Y-%m-%d)"[0m
+digest	Commit and push results	2026-04-13T06:09:05.0260305Z [36;1mgit push[0m
+digest	Commit and push results	2026-04-13T06:09:05.0283866Z shell: /usr/bin/bash -e {0}
+digest	Commit and push results	2026-04-13T06:09:05.0284139Z env:
+digest	Commit and push results	2026-04-13T06:09:05.0284422Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Commit and push results	2026-04-13T06:09:05.0284864Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib/pkgconfig
+digest	Commit and push results	2026-04-13T06:09:05.0285307Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Commit and push results	2026-04-13T06:09:05.0285747Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Commit and push results	2026-04-13T06:09:05.0286120Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.13/x64
+digest	Commit and push results	2026-04-13T06:09:05.0286559Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.13/x64/lib
+digest	Commit and push results	2026-04-13T06:09:05.0286854Z ##[endgroup]
+digest	Commit and push results	2026-04-13T06:09:05.1244397Z [main 73c9f6a] 📰 Daily digest 2026-04-13
+digest	Commit and push results	2026-04-13T06:09:05.1244928Z  2 files changed, 57 insertions(+), 57 deletions(-)
+digest	Commit and push results	2026-04-13T06:09:06.0294075Z To https://github.com/cyclez2000/myfeed
+digest	Commit and push results	2026-04-13T06:09:06.0294657Z    861de2d..73c9f6a  main -> main
+digest	Post Setup Python	﻿2026-04-13T06:09:06.0423776Z Post job cleanup.
+digest	Post Checkout repository	﻿2026-04-13T06:09:06.2170563Z Post job cleanup.
+digest	Post Checkout repository	2026-04-13T06:09:06.3197956Z [command]/usr/bin/git version
+digest	Post Checkout repository	2026-04-13T06:09:06.3237657Z git version 2.53.0
+digest	Post Checkout repository	2026-04-13T06:09:06.3285936Z Temporarily overriding HOME='/home/runner/work/_temp/27bea70d-3cd7-4e8e-9983-18e6abfd9d9c' before making global git config changes
+digest	Post Checkout repository	2026-04-13T06:09:06.3287665Z Adding repository directory to the temporary git global config as a safe directory
+digest	Post Checkout repository	2026-04-13T06:09:06.3293542Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/myfeed/myfeed
+digest	Post Checkout repository	2026-04-13T06:09:06.3336168Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+digest	Post Checkout repository	2026-04-13T06:09:06.3374812Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+digest	Post Checkout repository	2026-04-13T06:09:06.3617585Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+digest	Post Checkout repository	2026-04-13T06:09:06.3641739Z http.https://github.com/.extraheader
+digest	Post Checkout repository	2026-04-13T06:09:06.3655580Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+digest	Post Checkout repository	2026-04-13T06:09:06.3690296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+digest	Post Checkout repository	2026-04-13T06:09:06.3932851Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+digest	Post Checkout repository	2026-04-13T06:09:06.3968088Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+digest	Complete job	﻿2026-04-13T06:09:06.4309899Z Cleaning up orphan processes
+digest	Complete job	2026-04-13T06:09:06.4657006Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-python@v5. Actions will be forced to run with Node.js 24 by default starting June 2nd, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
