@@ -15,7 +15,7 @@
     <outline type="rss" xmlUrl="https://simonwillison.net/atom/everything" text="Simon Willison" title="Simon Willison"/>
     <outline type="rss" xmlUrl="https://openai.com/blog/rss.xml" text="OpenAI Blog" title="OpenAI 官方博客"/>
     <outline type="rss" xmlUrl="https://blog.google/technology/ai/rss/" text="Google AI" title="Google AI 博客"/>
-    <outline type="rss" xmlUrl="https://a16z.com/feed/" text="a16z" title="a16z 投资动态"/>
+    <outline type="rss" xmlUrl="https://a16zcrypto.com/feed/" text="a16z" title="a16z Crypto"/>
     <outline type="rss" xmlUrl="https://techcrunch.com/category/artificial-intelligence/feed/" text="TechCrunch AI" title="TechCrunch AI 频道"/>
   </body>
 </opml>
